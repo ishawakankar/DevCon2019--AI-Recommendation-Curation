@@ -1,20 +1,51 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Input, Image, Button, Card, Menu, Segment } from 'semantic-ui-react';
 
-class App extends Component {
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      result: [],
+      query: '',
+      credits: 0,
+      showResults: false,
+    };
+  }
+
+  handleShowResults = () => {
+    this.setState({
+      showResults: !this.state.showResults,
+    })
+  }
+
+  handleInputChange = (event) => {
+    this.setState({
+      query: event.target.value,
+    })
+  }
+
   render() {  
     return (
-      <div className="App" style={{height: '150vh'}}>
-        <Menu inverted widths={3} fixed="top">
+      <div className="App">
+        <Menu inverted fixed='top' >
           <Menu.Item >
-            <Image size="mini" src="https://react.semantic-ui.com/logo.png" />
+            <Image size="mini" src="https://react.semantic-ui.com/logo.png" avatar />
           </Menu.Item>
-          <Menu.Item />
-          <Menu.Item name='Credits' />
+          <Menu.Item position='right'>
+            <Image size="mini" 
+              src="https://cdn2.iconfinder.com/data/icons/world-currencies-gold/512/indian_rupee_sign_currency_gold_symbol-512.png" 
+              verticalAlign='middle' />
+            <span>{this.state.credits}</span>
+          </Menu.Item>
         </Menu>
         <header>
-          <Input action='Search' placeholder='Search' style={{width: '50vw'}}/>
 
+          <div style={{display: 'flex', flexDirection: 'column', alignItems:'center'}}>
+            <Input action={{icon: 'search',onClick: () => this.handleShowResults()}} placeholder='Search' 
+              onChange={this.handleInputChange} style={{width: '70vw', paddingTop: '80px'}} />
+          </div>
+
+          {(this.state.showResults)? 
           <Segment style={{margin: '30px', padding: '10px'}}>
           <Card.Group>
             <Card>
@@ -74,8 +105,15 @@ class App extends Component {
             </Card>
           </Card.Group>
 
-          <Button floated='right' color='blue'>Submit</Button>
+          <Button floated='right' color='blue' onClick={this.handleShowResults}>Submit</Button>
 
+          </Segment>
+          :''}
+
+          <Segment>
+            <p align='center'>
+              Graph
+            </p>
           </Segment>
 
         </header>
