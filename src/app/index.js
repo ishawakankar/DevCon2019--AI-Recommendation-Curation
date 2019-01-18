@@ -1,8 +1,9 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import AppRouter from '../routers/AppRouter'
 
-console.log("It works!");
- if (process.env.NODE_ENV !== 'production') {
-       console.log('Looks like we are in development mode!');
-     }
-     else if(process.env.NODE_ENV==='production'){
-         console.log("we are in production mode")
-     }
+ReactDOM.render(
+  <AppRouter/>,
+  document.getElementById('app')
+  );
+  
