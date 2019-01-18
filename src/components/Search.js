@@ -35,7 +35,7 @@ class Search extends React.Component {
         <div>
             <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', marginTop:'80px'}}>
                 <Input placeholder='Search' onChange={this.props.handleInputChange} />
-                <Dropdown placeholder='Select number' selection options={this.state.num} />
+                <Dropdown placeholder='Select number of responses' selection options={this.state.num} />
                 <Button onClick={this.props.handleSubmit} >Send</Button>
             </div>
             

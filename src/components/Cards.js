@@ -10,12 +10,19 @@ class Cards extends React.Component {
   }
 
   componentDidMount() {
-    console.log('query in cards',this.props.query)
+    //Make fetch call to search api
+    console.log('Search api')
+  }
+
+  submitFeedback() {
+    //Make fetch call to feedback api
+    console.log('Submit feedback')
   }
 
   render() {
     return (
       <div>
+        {console.log('query in cards', this.props.query)}
         <Card.Group>
           {this.state.results.map((x, i) =>
             <Card key={i}>
@@ -39,7 +46,7 @@ class Cards extends React.Component {
             </Card>
           )}
         </Card.Group>
-        <Button style={{marginTop: '10px'}} > Submit </Button>
+        <Button style={{marginTop: '10px'}} onClick={this.submitFeedback}> Submit </Button>
         <Divider />
       </div>
     );

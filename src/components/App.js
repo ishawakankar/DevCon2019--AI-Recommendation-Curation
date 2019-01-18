@@ -11,19 +11,22 @@ class App extends React.Component {
     super(props);
     this.state = {
       query: '',
+      input: '',
     }
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-}
+  }
 
   handleInputChange = (event) => {
     this.setState({
-        query: event.target.value,
+        input: event.target.value,
     })
   }
 
   handleSubmit = () => {
-      console.log('Entered query: ',this.state.query)
+    this.setState({
+      query: this.state.input,
+    })
   }
 
   render() {  
@@ -31,7 +34,7 @@ class App extends React.Component {
       <div>
         <Navbar />
         <Search handleInputChange={this.handleInputChange} handleSubmit={this.handleSubmit} />
-        <Cards query={this.state.query}/>
+        {(this.state.query=='')?'':<Cards query={this.state.query}/>}
         <Graph />
       </div>
     );
