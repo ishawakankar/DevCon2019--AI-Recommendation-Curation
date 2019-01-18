@@ -1,28 +1,34 @@
 {
-  "name": "client",
-  "version": "0.1.0",
-  "private": true,
-  "devDependencies": {
-    "react-scripts": "2.1.3"
-  },
-  "dependencies": {
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0",
-    "semantic-ui-react": "^0.84.0"
-  },
+  "name": "dev-con",
+  "version": "1.0.0",
+  "homepage": "https://gitlab.com/ishawakankar/devcon.git",
+  "description": "Crowd sourcing based platform in which user give feedback on the search result",
+  "main": "index.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build:prod": "webpack -p --conifg webpack.prod.js",
+    "build": "webpack-dev-server --config webpack.dev.js",
+    "start": "npm run build"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "keywords": [
+    "reactjs"
+  ],
+  "author": "Isha Wakankar && Anmol Gupta",
+  "license": "MIT",
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "clean-webpack-plugin": "^1.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "react": "^15.2.1",
+    "react-dom": "^15.2.1"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  "devDependencies": {
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-stage-2": "^6.11.0",
+    "gh-pages": "^2.0.1",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1",
+    "webpack-merge": "^4.2.1"
+  }
 }
