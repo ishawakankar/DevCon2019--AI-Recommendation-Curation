@@ -11,7 +11,7 @@ class Navbar extends React.Component {
 
   render() {  
     return (
-        <Menu inverted fixed='top' >
+        <Menu inverted>
           <Menu.Item >
             <Image size="mini" src="https://react.semantic-ui.com/logo.png" avatar />
           </Menu.Item>
