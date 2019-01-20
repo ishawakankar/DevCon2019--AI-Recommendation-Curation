@@ -1,11 +1,13 @@
 import React from 'react';
-import { Button } from 'semantic-ui-react';
+import { Button, Segment } from 'semantic-ui-react';
 
 class Login extends React.Component {
 
   render() {  
     return (
-        <Button href={`/`}>Login</Button>
+      <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', paddingTop: '20%'}}>
+        <Button primary size='massive' href={`/#/dashboard`}>Login</Button>
+      </div>  
     );
   }
 }
