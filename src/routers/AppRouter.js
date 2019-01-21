@@ -11,7 +11,7 @@ const AppRouter = () =>
     <div>
         <Switch>
             <Route path="/" component={Login} exact={true}/>
-            <Route path="/dashboard" component={App} />
+            <Route path="/home" component={App} />
         </Switch>
     </div>
     </HashRouter>
