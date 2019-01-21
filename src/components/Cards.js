@@ -5,7 +5,7 @@ class Cards extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      results: ['Title1', 'Title2', 'Title3', 'Title4', 'Title5'],
+      results: ['Title1', 'Title2', 'Title3'],
       countApproval: 0,
       countDenail: 0,
     };
@@ -13,12 +13,8 @@ class Cards extends React.Component {
 
   componentDidMount = () => {
     //Make fetch call to search api
-    this.setState({
-      results: this.state.results.splice(0,this.props.numResponse)
-    })
     console.log('Search api');
     console.log('query in cards =>', this.props.query)
-    console.log('number of response in cards =>', this.props.numResponse)
     console.log('filters in cards =>', this.props.filters)
   }
 
