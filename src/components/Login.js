@@ -1,16 +1,25 @@
-import React from 'react';
-import { Button, Segment } from 'semantic-ui-react';
-import GoogleLogin from 'react-google-login';
-import { Redirect } from 'react-router';
-import clientID from '../../config/keys';
+import React from "react";
+import {
+  Container,
+  Button,
+  Form,
+  Grid,
+  Header,
+  Image,
+  Message,
+  Segment
+} from "semantic-ui-react";
+import GoogleLogin from "react-google-login";
+import { Redirect } from "react-router";
+import clientID from "../../config/keys";
+import "../css/style.css";
 
 class Login extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
-      redirect: false,
-    }
+      redirect: false
+    };
   }
 
   onSignIn(response) {
@@ -18,32 +27,53 @@ class Login extends React.Component {
     sessionStorage.setItem("userName", response.profileObj.name);
     sessionStorage.setItem("userProfileImage", response.profileObj.imageUrl);
     this.setState({
-      redirect: true,
-    })
+      redirect: true
+    });
   }
 
   onFailure(response) {
     console.log("Login Failed");
     this.setState({
-      redirect: false,
-    })
-
+      redirect: false
+    });
   }
-
 
   render() {
     return (
-      <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', paddingTop: '20%' }}>
-        {/* <Button primary size='massive' href={`/#/dashboard`}>Login</Button> */}
-        {(this.state.redirect)? <Redirect to="/home" />:
-        <GoogleLogin
-                clientId={clientID}
-                buttonText="Sign in with Google"
-                onSuccess={this.onSignIn.bind(this)}
-                onFailure={this.onSignIn.bind(this)}
-                style={{ width: 100 }}
-              />}
-      </div>  
+      <Container verticalAlign="middle">
+        <Segment verticalAlign="middle" style={{ minHeight: '100vh', padding: '1em 0em' }}>
+          <Image
+            src="./images/buzzinga.png"
+            size="big"
+            className="m-b"
+            centered
+          />
+          <Grid
+            textAlign="center"
+            style={{ height: "100%" }}
+            verticalAlign="middle"
+          >
+            <Grid.Column verticalAlign='middle' style={{ maxWidth: 450 }}>
+              <Segment raised className="red-bg">
+                <Header as="h2" textAlign="center">
+                  Log-in
+                </Header>
+                <Form size="large">
+                    <Form.Input
+                      fluid
+                      icon="user"
+                      iconPosition="left"
+                      placeholder="User Id"
+                    />
+                    <Button  color="black" fluid size="large">
+                      Login
+                    </Button>
+                </Form>
+              </Segment>
+            </Grid.Column>
+          </Grid>
+        </Segment>
+      </Container>
     );
   }
 }
