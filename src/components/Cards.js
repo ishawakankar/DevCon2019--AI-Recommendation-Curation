@@ -1,11 +1,13 @@
 import React from 'react';
-import { Card, Button, Image } from 'semantic-ui-react';
+import { Card, Button, Image, Header } from 'semantic-ui-react';
 
 class Cards extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      results: ['title1', 'title2', 'title3', 'title4', 'title5'],
+      results: ['Title1', 'Title2', 'Title3', 'Title4', 'Title5'],
+      countApproval: 0,
+      countDenail: 0,
     };
   }
 
@@ -18,9 +20,16 @@ class Cards extends React.Component {
     console.log('filters in cards =>', this.props.filters)
   }
 
+  countOfApprovals = () => {}
+
+  countOfDenials = () => {}
+
   render() {
     return (
       <div style={{margin: '10px'}}>
+        <Header style={{paddingTop: '20px', paddingLeft: '20px'}}>  
+          Recommended:
+        </Header>
         <Card.Group style={{marginTop: '10px', display: 'flex', flexDirection: 'row', justifyContent: 'center'}}>
           {this.state.results.map((x, i) =>
             <Card key={i}>

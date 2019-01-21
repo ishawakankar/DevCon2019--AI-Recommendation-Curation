@@ -9,6 +9,10 @@ class Navbar extends React.Component {
     };
   }
 
+  componentDidMount() {
+    //Fetch Graph Stats
+  }
+
   render() {  
     return (
         <div style={{marginTop: '30px'}}>
@@ -16,7 +20,7 @@ class Navbar extends React.Component {
             <h3>
                 Performance:
             </h3>
-            <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAdHuTr4a-jrZJxMEUMaa4L7IR4etN_c5glgbsxBd50NHze9iG' style={{height:'260px', marginTop: '20px'}}/>
+            <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAdHuTr4a-jrZJxMEUMaa4L7IR4etN_c5glgbsxBd50NHze9iG' style={{height:'30%',width: '70%', marginTop: '20px'}}/>
             </Segment>
         </div>
     );
