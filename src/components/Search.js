@@ -1,5 +1,5 @@
 import React from 'react';
-import { Input, Button, Dropdown, Segment, Grid } from 'semantic-ui-react';
+import { Input, Button, Dropdown, Segment, Grid, Header } from 'semantic-ui-react';
 
 class Search extends React.Component {
   constructor(props) {
@@ -23,16 +23,19 @@ class Search extends React.Component {
   render() {
     return (
         <Segment style={{margin: '10px', display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '20px'}}>
+            <Header>
+                Search
+            </Header>
             <Grid columns='2'>
                 <Grid.Row >
                     <Input focus placeholder='Search' style={{width: '100%'}} onChange={this.props.handleInputChange} />
                 </Grid.Row>
-                <Grid.Row>
-                    <Dropdown placeholder='Number of responses' selection options={this.state.num} style={{width: '50%', border: '1px solid #51A7E8'}} onChange={this.props.handleNumberOfResponses}/>
-                    <Dropdown placeholder='Filters' multiple selection options={this.state.filters} style={{width: '50%', border: '1px solid #51A7E8'}} onChange={this.props.handleFilters} />
+                <Grid.Row style={{display : 'flex', flexDirection: 'row', justifyContent: 'center'}}>
+                    <Dropdown placeholder='Number of responses' selection options={this.state.num} style={{ border: '1px solid #51A7E8', margin: '5px', width: '40%'}} onChange={this.props.handleNumberOfResponses}/>
+                    <Dropdown placeholder='Filters' multiple selection options={this.state.filters} style={{ border: '1px solid #51A7E8', margin: '5px', width: '40%'}} onChange={this.props.handleFilters} />
                 </Grid.Row>
-                <Grid.Row >
-                    <Button positive style={{marginLeft: '45%'}} onClick={this.props.handleSearch}>Search</Button>
+                <Grid.Row style={{display: 'flex', flexDirection: 'row', justifyContent: 'center'}}>
+                    <Button positive onClick={this.props.handleSearch}>Search</Button>
                 </Grid.Row>
             </Grid>
         </Segment>
