@@ -1,7 +1,8 @@
 import React from 'react';
 import { Button, Segment } from 'semantic-ui-react';
 import GoogleLogin from 'react-google-login';
-import { Redirect } from 'react-router'
+import { Redirect } from 'react-router';
+import clientID from '../../config/keys';
 
 class Login extends React.Component {
 
@@ -26,7 +27,7 @@ class Login extends React.Component {
         {/* <Button primary size='massive' href={`/#/dashboard`}>Login</Button> */}
         {(this.state.redirect)? <Redirect to="/home" />:
         <GoogleLogin
-                clientId="325576232110-serqa7m98or6dvaej7g2i6h8b2ur6ql3.apps.googleusercontent.com"
+                clientId={clientID}
                 buttonText="Sign in with Google"
                 onSuccess={this.onSignIn.bind(this)}
                 onFailure={this.onSignIn.bind(this)}
