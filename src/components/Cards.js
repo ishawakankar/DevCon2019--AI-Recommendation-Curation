@@ -13,16 +13,22 @@ class Cards extends React.Component {
 
   componentDidMount = () => {
     //Make fetch call to search api
+    this.setState({
+      results: this.state.results.splice(0,this.props.numResponse)
+    })
     console.log('Search api');
-
     console.log('query in cards =>', this.props.query)
     console.log('number of response in cards =>', this.props.numResponse)
     console.log('filters in cards =>', this.props.filters)
   }
 
-  countOfApprovals = () => {}
+  countOfApprovals = (id) => {
+    console.log('approval, ', id)
+  }
 
-  countOfDenials = () => {}
+  countOfDenials = (id) => {
+    console.log('denial, ', id)
+  }
 
   render() {
     return (
@@ -43,10 +49,10 @@ class Cards extends React.Component {
               </Card.Content>
               <Card.Content extra>
                 <div className='ui two buttons'>
-                  <Button basic color='green'>
+                  <Button basic color='green' onClick={() => this.countOfApprovals(i)}>
                     Approve
                   </Button>
-                  <Button basic color='red'>
+                  <Button basic color='red' onClick={() => this.countOfDenials(i)}>
                     Decline
                   </Button>
                 </div>
