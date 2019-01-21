@@ -14,6 +14,8 @@ class Login extends React.Component {
 
   onSignIn(response){
     console.log(response.profileObj);
+    sessionStorage.setItem("userName",response.profileObj.name);
+    sessionStorage.setItem("userProfileImage",response.profileObj.imageUrl);
     this.setState({
       redirect: true,
     })
@@ -24,7 +26,7 @@ class Login extends React.Component {
         {/* <Button primary size='massive' href={`/#/dashboard`}>Login</Button> */}
         {(this.state.redirect)? <Redirect to="/home" />:
         <GoogleLogin
-                clientId="186061262302-ugf07t4fm3iihgnk6cnnltllrvahthku.apps.googleusercontent.com"
+                clientId="325576232110-serqa7m98or6dvaej7g2i6h8b2ur6ql3.apps.googleusercontent.com"
                 buttonText="Sign in with Google"
                 onSuccess={this.onSignIn.bind(this)}
                 onFailure={this.onSignIn.bind(this)}

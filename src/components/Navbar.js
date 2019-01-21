@@ -1,6 +1,7 @@
 import React from 'react';
 import { Image, Menu } from 'semantic-ui-react';
 
+
 class Navbar extends React.Component {
   constructor(props) {
     super(props);
@@ -13,7 +14,7 @@ class Navbar extends React.Component {
     return (
         <Menu inverted>
           <Menu.Item >
-            <Image size="mini" src="https://react.semantic-ui.com/logo.png" avatar />
+            <Image size="mini" src={sessionStorage.getItem("userProfileImage")} avatar />
           </Menu.Item>
           <Menu.Item position='right'>
             <Image size="mini" 
