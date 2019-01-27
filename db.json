@@ -1,0 +1,65 @@
+{
+  "queryResponse": [
+    {
+      "id": "10",
+      "appicon": "",
+      "Previewurl": "https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg?cs=srgb&dl=burger-chips-dinner-70497.jpg&fm=jpg",
+      "name": "card1"
+    },
+    {
+      "id": "11",
+      "appicon": "",
+      "Previewurl": "https://media.timeout.com/images/103572212/630/472/image.jpg",
+      "name": "card2"
+    },
+    {
+      "id": "12",
+      "appicon": "",
+      "Previewurl": "https://www.tasteofhome.com/wp-content/uploads/2017/10/exps8037_MRR143297A09_12_1b-1-696x696.jpg",
+      "name": "card3"
+    },
+    {
+      "request": {
+        "query": "",
+        "subject": "EVS",
+        "num_of_response": 3,
+        "session_id": "9c187acf-df77-4a31-bbea-972df00e67d3_1548284046850"
+      },
+      "id": "VeCG9XY"
+    }
+  ],
+  "data": [
+    {
+      "timestamp": "1548325428000",
+      "accuracy": "10"
+    },
+    {
+      "timestamp": "1548329028000",
+      "accuracy": "20"
+    },
+    {
+      "timestamp": "1548277712000",
+      "accuracy": "23"
+    },
+    {
+      "timestamp": "1548281312000",
+      "accuracy": "19"
+    },
+    {
+      "timestamp": "1548284912000",
+      "accuracy": "25"
+    },
+    {
+      "timestamp": "1548288512000",
+      "accuracy": "32"
+    },
+    {
+      "timestamp": "1548292112000",
+      "accuracy": "45"
+    },
+    {
+      "timestamp": "1548295712000",
+      "accuracy": "48"
+    }
+  ]
+}
